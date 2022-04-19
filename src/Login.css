@@ -6,7 +6,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background: url("https://media.istockphoto.com/photos/graphiti-picture-id134833385?k=20&m=134833385&s=612x612&w=0&h=gliSrgYEHkjsJo-CbnMYHXPZyw7yAJXuXTnHU2Dj-cI=");
+  background-image: url("./backgimg.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
