@@ -11,13 +11,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #2f3135;
+  background-color: #10286ebf;
   color: white;
   border-bottom: 3px solid #26282c;
 }
 
 .sidebar__channels {
   flex: 1;
+  background-color: #101b3b;
 }
 
 .sidebar__addChannel {
@@ -32,13 +33,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #2f3135;
+  background-color: #101b3b;
   color: gray;
 }
 
 .sidebar__header {
   display: flex;
   align-items: center;
+  
 }
 
 .sidebar__voice,
@@ -47,7 +49,7 @@
   justify-content: space-between;
   align-items: center;
   color: gray;
-  background-color: #2f3135;
+  background-color: #101b3b;
   padding: 10px;
   border-top: 1px solid gray;
 }
@@ -101,4 +103,5 @@
 .sidebar__channelsList {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  
 }

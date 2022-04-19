@@ -1,4 +1,5 @@
-import { AddCircle, CardGiftcard, EmojiEmotions, Gif } from '@material-ui/icons'
+import { AddCircle, CardGiftcard, EmojiEmotions, Gif, Link } from '@material-ui/icons'
+
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import './Chat.css'
@@ -16,6 +17,11 @@ function Chat() {
     const channelName = useSelector(selectChannelName)
     const [messages, setMessages] = useState([])
     const [input, setInput] = useState('')
+    const [fileName, setFileName] = useState("");
+    const [inputUrl, setInputUrl] = useState("");
+    const onChangeFile = (e) => {
+        setFileName(e.target.files[0]);
+      };
 
     useEffect(() => {
         if(channelId){
@@ -35,10 +41,12 @@ function Chat() {
         db.collection('channels').doc(channelId).collection('messages').add({
             user: user,
             messsage: input,
+            imageUrl: inputUrl,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
 
-        setInput('')
+        setInput('');
+        setInputUrl("");
     }
 
     return (
@@ -53,18 +61,33 @@ function Chat() {
                         timestamp = {message.timestamp}
                         message = {message.messsage}
                         user = {message.user}
+                        imageUrl={message.imageUrl}
                     />
                 ))}
                 
 
             </div>
             <div className = "chat__input">
-                <AddCircle />
+           
+             
+             
+                <AddCircle style={{color:" #9fafd0"}} />
                 <form>
                     <input 
                     value = {input}
                     onChange = {(e) => setInput(e.target.value)}
-                    placeholder = {`message #${channelName}`}/>
+                    placeholder = {`Type your Message in #${channelName} Channels`}/>
+                 
+                 <div className="modal__fieldLink">
+              <Link/>
+              <input
+                value={inputUrl}
+                onChange={(e) => setInputUrl(e.target.value)}
+                type="text"
+                placeholder="Optional: inclue a link that gives context"
+              ></input>
+            </div>
+
                     <button 
                     onClick = {sendMessage}
                     disabled = {!channelId}

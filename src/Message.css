@@ -8,6 +8,14 @@
 .message__info {
   margin-left: 20px;
 }
+.message__info>img {
+  width: 100%;
+  object-fit: contain;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
 .message__timestamp {
   color: gray;

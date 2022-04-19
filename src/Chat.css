@@ -3,6 +3,7 @@
   flex-direction: column;
   flex: 0.75;
   background-color: #363a3f;
+  background: url(https://images.unsplash.com/photo-1614680376739-414d95ff43df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
   height: 100vh;
 }
 
@@ -29,19 +30,32 @@
   border-radius: 5px;
   margin: 20px;
   border-top: 1px solid gray;
-  background-color: #474b53;
+  background-color: white;
 }
 
 .chat__input > form {
   flex: 1;
 }
+.modal__fieldLink {
+  color: gray;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
 
+ .modal__fieldLink > input {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin-left: 5px;
+  
+}
 .chat__input > form > input {
   padding: 15px;
   background: transparent;
   border: none;
   outline-width: 0;
-  color: white;
+  color:  #1d2e46;
   width: 100%;
   font-size: large;
 }
@@ -52,4 +66,5 @@
 
 .chat__inputIcons > .MuiSvgIcon-root {
   padding: 5px;
+  color: #9fafd0;
 }
